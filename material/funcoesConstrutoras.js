@@ -13,3 +13,4 @@ function Animal(type, name, age) {
 
     return animal;
 }
+

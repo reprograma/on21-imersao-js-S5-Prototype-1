@@ -1,39 +1,84 @@
-// Crie uma função construtora para o objeto da questão anterior.
-// O construtor deve receber como parâmetros:
-// - [ ] `firstname`
-// - [ ] `lastName`
-// - [ ] `salary`
+=======
+// Resolução da Dani
+// function createEmployee(firstname, lastname, salary) {
+//   const employee = {};
 
-// O `id` deve ser gerado automaticamente sendo uma `string` com o formato de `uid`.
+//   employee.id = "id" + new Date().getTime();
+//   employee.firstname = firstname;
+//   employee.lastname = lastname;
+//   employee.salary = salary;
 
-// Crie dois objetos com valores diferentes e teste.
+//   return employee;
+// }
+
+// const funcionario1 = createEmployee("xitãozinho", "xororo", 1000);
+// const funcionario2 = createEmployee("sandy", "jr", 1000);
+
+// console.log(funcionario1, funcionario2);
 
 
 
-function Employee (firstName, lastName, salary){
+//Resolução da Gabi
+// function employee(firstname, lastName, salary) {
 
-    const employee = {};
+//   let employee = {}
+  
+ 
+//   employee.id = Math.floor(Math.random() * 100).toFixed(1)
+//   employee.firstname = firstname;
+//   employee.lastName = lastName;
+//   employee.salary = salary;
 
-    // employee.id = Math.floor(Math.random() * 100)
-    employee.id = Math.floor(Math.random() * 100).toFixed(1)
-    // employee.uid = Math.random(1, 1000)
-    // employee.id = "id" + new Date().getTime(); pode gerar o mesmo id
-    employee.fistName = firstName;
-    employee.lastName = lastName;
-    employee.salary = salary;
+//   employee.raiseSalary = function raiseSalary(percent) {
+//       const newSalary = (this.salary * percent) + this.salary;
+//       return newSalary;
+//   }
 
-    employee.raiseSalary = function raiseSalary(percent){
-        const newSalary = (this.salary * percent) + this.salary;
-        this.salary = newSalary;
-       console.log(`O novo salário é ${newSalary}`) ;
-    }
-    return employee;
+//   return employee;
+  
+// } 
+
+// const newEmployee = employee('Luiza', 'Tavares', 12_000);
+// console.log(newEmployee);
+
+// console.log(newEmployee.raiseSalary(0.10));
+
+
+//Resolução da Erica
+function create_UUID(){
+  var dt = new Date().getTime();
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (dt + Math.random()*16)%16 | 0;
+      dt = Math.floor(dt/16);
+      return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+  });
+  return uuid;
 }
 
-const name1 = Employee('Maria', 'Santos', 33_000);
-const name2 = Employee('Fernando', 'Soares', 20_000)
+function createEmployee(firstName, lastName, salary) {
+  const employee = {}
+  
+  // employee.create_UUID();
+  // employee.id = Math.floor(Math.random() * 100).toFixed(1)
+  employee.id = create_UUID();
+  employee.firstName = firstName;
+  employee.lastName = lastName;
+  employee.salary = salary;
+  
+  employee.raiseSalary = function (percent) {
+      const newSalary = (this.salary
+   * percent + this.salary);
+      this.salary = newSalary;
+      return `O novo salário é ${newSalary}`;
+      };
+  
+  return employee;
+  }
+  
+  const funcionario1 = createEmployee("Maria", "da Silva", 1000);
+  const funcionario2 = createEmployee("Jose", "da Silva", 1000);
+  
+  console.log(funcionario1.raiseSalary(0.10));
 
-console.log(name1, name2)
-console.log(name1.raiseSalary(0.10));
-console.log(name2.raiseSalary(0.5));
+  console.log(funcionario1)
 

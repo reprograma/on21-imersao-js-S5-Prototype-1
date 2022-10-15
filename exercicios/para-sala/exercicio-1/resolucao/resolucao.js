@@ -13,13 +13,14 @@ employee.raiseSalary = function raiseSalary(percent) {
 console.log(employee.raiseSalary(0.20))
 
 const employee2 = {
-  id: 2,
-  firstname: 'Vinicius',
-  lastName: 'Pereira ',
-  salary: 5_000,
+  id: 4,
+  firstName: 'Sandra',
+  lastName: 'Temudo ',
+  salary: 5000,
   raiseSalary(percent) {
       const newSalary = (this.salary * percent) + this.salary;
-      return newSalary;
+      this.salary = newSalary;
+      return `O novo salário é ${newSalary}`;
   }
 }
 

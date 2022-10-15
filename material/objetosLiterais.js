@@ -1,17 +1,17 @@
-const animal2 = {
-  type: "cachorro",
-  name: "Aslam",
-  age: 3,
-  hobbies: ["comer", "brincar", "correr atrás das motos"],
-  "can I have": true,
-  eat: function eat() {
-    // ...implementação da função
-  },
-};
+// const animal = {
+//   type: 'cachorro',
+//   name: 'Aslam',
+//   age: 3,
+//   hobbies: ['comer', 'brincar', 'correr atrás das motos'],
+//   'can I have': true,
+//   eat: function eat() {
+//     //...
+//   }
+// }
 
-const eat = function eat() {
-  // ...implementação da função
-};
+function eat() {
+  console.log("O animal está comendo");
+}
 
 const animal = {};
 
@@ -22,7 +22,7 @@ animal.hobbies = ["comer", "brincar", "correr atrás das motos"];
 animal["can I have"] = true;
 animal.eat = eat;
 animal.play = function play() {
-  console.log(`O primeiro hobby é ${this.hobbies[0]}`);
+  console.log(`O primeiro hobby é ${this.hobbies}`);
 };
 
-animal.play();
+animal.eat();

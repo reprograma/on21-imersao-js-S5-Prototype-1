@@ -1,5 +1,5 @@
 function Animal(type, name, age) {
-  let animal = {};
+  const animal = {};
 
   animal.type = type;
   animal.name = name;
@@ -11,11 +11,9 @@ function Animal(type, name, age) {
 
   return animal;
 }
-const animal1 = Animal("cachorro", "Aslam", 3);
-const animal2 = Animal("gato", "Caju", 1);
 
-console.log("Animal 1: ", animal1);
-console.log("Animal 2: ", animal2);
+const cachorroAslam = Animal("cachorro", "Aslam", 3);
+console.log(cachorroAslam);
 
-animal1.eat(); //O cachorro chamado Aslam está comendo
-animal2.eat(); //O gato chamado Caju está comendo
+const gataCaju = Animal("gato", "Caju", 1);
+console.log(gataCaju);

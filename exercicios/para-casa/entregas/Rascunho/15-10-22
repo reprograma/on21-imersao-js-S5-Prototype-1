@@ -1,0 +1,17 @@
+let animal = {
+  type: "cachorro",
+  name: "Aslam",
+  age: 3,
+  hobbies: ["comer", "brincar", "correr atras das motos"],
+  //propriedade
+  "can I have": true,
+};
+
+let animal2 = {};
+
+animal2.type = "cachorro";
+animal2.name = "Aslam";
+animal2.age = 3;
+animal2.hobbies = ["comer", "brincar", "correr atras das motos"];
+animal["can I have"] = true;
+console.log(animal.name);

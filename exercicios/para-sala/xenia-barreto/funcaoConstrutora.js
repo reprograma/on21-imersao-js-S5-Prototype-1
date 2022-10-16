@@ -26,8 +26,8 @@ function Employee(firstName, lastName, salary){ //function constructor
     return employee
 }
 
-const employee1 = Employee('Amanda', 'Silva',3000) //function instanciation
-const employee2 = Employee('Amanda', 'Silva',3000) //function instanciation
+const employee1 = Employee('Amanda', 'Silva',3000) //function instantiation
+const employee2 = Employee('Amanda', 'Silva',3000) //function instantiation
 
 console.log(employee1);
 console.log(employee2);

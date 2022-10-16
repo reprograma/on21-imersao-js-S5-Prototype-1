@@ -1,0 +1,4 @@
+SEMANA 5 - PROTOTYPE
+
+No objeto pode definir qualquer coisa, até mesmo funções.
+Para usar atributos dentro dele usase o this.

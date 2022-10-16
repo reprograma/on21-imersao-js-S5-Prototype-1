@@ -96,13 +96,42 @@ function Employee(firstName, lastName, salary, benefits) {
   return employee;
 }
 
-const employee1 = Employee("Cláudia Maria", "Prudente", 10_000, [
+const employee2 = Employee("Cláudia Maria", "Prudente", 10_000, [
   "VR",
   "VT",
   "gympass",
   "auxílio creche",
 ]);
 
-console.log(employee1.listBenefits());
-employee1.removeBenefits("VR");
-console.log(employee1.listBenefits());
+console.log(employee2.listBenefits());
+employee2.removeBenefits("VR");
+console.log(employee2.listBenefits());
+
+function createEmployee(firstname, lastname, salary, benefits){
+    const employee = {};
+    employee.id = Math.floor(Math.random() * 100);
+    employee.firstName = firstname;
+    employee.lastname = lastname;
+    employee.salary = salary;
+    employee.benefits = benefits;
+
+    employee.raiseSalary = function raiseSalary(percent){
+        const newSalary = (this.salary * percent) + this.salary;
+        return newSalary;
+    }
+
+    employee.listBenefits = [];
+    employee.addBenefits = function addBenefits(benefit){
+        this.listBenefits.push(benefit);
+        return this.listBenefits;
+    }
+    employee.removeBenefits = function removeBenefits(benefit){
+        return (this.benefits = this.benefits.filter((b) => b != benefit));
+    } 
+
+    return employee;
+
+}
+
+const employee1 = createEmployee('Yoshi', 'Mario', 10000);
+console.log(employee1.addBenefits("Vale refeição"));

@@ -10,7 +10,7 @@ function create_UUID(){
     return uuid;
 }
 
-function Employee(firstName, lastName, salary){
+function Employee(firstName, lastName, salary){ //function constructor
     let employee = {};
     
     employee.id = create_UUID()
@@ -26,8 +26,8 @@ function Employee(firstName, lastName, salary){
     return employee
 }
 
-const employee1 = Employee('Amanda', 'Silva',3000)
-const employee2 = Employee('Amanda', 'Silva',3000)
+const employee1 = Employee('Amanda', 'Silva',3000) //function instanciation
+const employee2 = Employee('Amanda', 'Silva',3000) //function instanciation
 
 console.log(employee1);
 console.log(employee2);

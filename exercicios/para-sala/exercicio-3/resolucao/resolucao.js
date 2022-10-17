@@ -4,8 +4,8 @@ function Employee(firstName, lastName, salary, benefits) {
 
   newEmployee.id = Math.floor(Math.random() * 10);
   newEmployee.firstName = firstName,
-    newEmployee.lastName = lastName,
-    newEmployee.salary = salary;
+  newEmployee.lastName = lastName,
+  newEmployee.salary = salary;
   newEmployee.benefits = benefits
   newEmployee.raiseSalary = function raiseSalary(percent) {
     const newSalary = (this.salary * percent) + this.salary;
@@ -17,13 +17,13 @@ function Employee(firstName, lastName, salary, benefits) {
     return `Benefício: ${benefit} adicionado com sucesso`
   };
   newEmployee.removeBenefits = function removeBenefits(benefit) {
-     this.benefits = this.benefits.filter((b) => b != benefit);
-     return `Benefício: ${benefit} removido com sucesso`
+    this.benefits = this.benefits.filter((b) => b != benefit);
+    return `Benefício: ${benefit} removido com sucesso`
   };
 
   newEmployee.listBenefits = function listBenefits() {
 
-      return `O funcionário possui estes benefícios: ${this.benefits}`;
+    return `O funcionário possui estes benefícios: ${this.benefits}`;
   }
   return newEmployee
 }

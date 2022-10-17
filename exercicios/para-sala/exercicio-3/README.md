@@ -6,9 +6,9 @@
 ## Exercício 3
 
 Modifique a função criada anteriormente para ter também os seguintes métodos:
-- [ ] `addBenefits(benefit)`
-- [ ] `removeBenefits(benefit)`
-- [ ] `listBenefits()`
+- [x] `addBenefits(benefit)`
+- [x] `removeBenefits(benefit)`
+- [x] `listBenefits()`
 
 que devem adicionar, remover e listar um array de benefícios, respectivamente.
 

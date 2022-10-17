@@ -1,4 +1,4 @@
-function Employee(firstName, lastName, salary, benefits) {
+function Employee(firstName, lastName, salary) {
   const employee = {};
 
   employee.id = Math.floor(Math.random() * 100)
@@ -9,7 +9,7 @@ function Employee(firstName, lastName, salary, benefits) {
     "Gympass",
     "VA",
     "VR",
-    "AuxílioPet",
+    "Auxílio Pet",
   ];
 
   employee.raiseSalary = function raiseSalary(percent) {
@@ -20,16 +20,18 @@ function Employee(firstName, lastName, salary, benefits) {
 
   employee.addBenefits = function addBenefits(benefit) {
     this.benefits.push(benefit);
-    return this.benefits;
+    return `${benefit} adicionado aos benefícios`;
   }
   
   employee.removeBenefits = function removeBenefits(benefit) {
-    this.benefits.slice(benefit)
-    return this.benefits;
+    this.benefits = this.benefits.filter(function (element) {
+      return element !== benefit;
+    });
+     return `${benefit} removido dos benefícios`;
   }
   
   employee.listBenefits = function listBenefits() {
-    return this.benefits
+    return `Benefícios do funcionário: ${this.benefits}`
   }
 
   return employee;
@@ -37,7 +39,8 @@ function Employee(firstName, lastName, salary, benefits) {
 
 
 const employee1 = Employee("Meredith", "Grey", 9000);
-console.log(employee1.raiseSalary(0.15))
-console.log(employee1.addBenefits("Plano de saúde"))
-console.log(employee1.removeBenefits(0))
-console.log(employee1.listBenefits())
+console.log(employee1);
+console.log(employee1.addBenefits("Plano de saúde"));
+console.log(employee1.listBenefits());
+console.log(employee1.removeBenefits("VA"));
+console.log(employee1.listBenefits());

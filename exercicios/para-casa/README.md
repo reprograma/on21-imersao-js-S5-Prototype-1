@@ -41,13 +41,13 @@ const ability = {
 ```
 
 - Move: deve possui:
-  - [ ] nome
-  - [ ] tipo
-  - [ ] descrição
-  - [ ] poder
-  - [ ] alvo ('self', 'allies', 'selected')
-  - [ ] precisão
-  - [ ] prioridade.
+  - [x] nome
+  - [x] tipo
+  - [x] descrição
+  - [x] poder
+  - [x] alvo ('self', 'allies', 'selected')
+  - [x] precisão
+  - [x] prioridade.
   
 Ex.:
 ```javascript
@@ -83,23 +83,23 @@ const another_move = {
 ```
 
 - Pokemon: deve possuir
-  - [ ] nome
-  - [ ] número
-  - [ ] tipo(s)
-  - [ ] habilidades
-  - [ ] habilidade oculta
-  - [ ] status - contendo:
-    - [ ] saúde
-    - [ ] ataque
-    - [ ] defesa
-    - [ ] ataque especial
-    - [ ] defesa especial
-    - [ ] velocidade
-  - [ ] estágio de evolução ('baby', 'basic', 'stage-1', 'stage-2')
-  - [ ] nível
-  - [ ] nível de evolução
-  - [ ] pontos de experiência
-  - [ ] apelido.
+  - [x] nome
+  - [x] número
+  - [x] tipo(s)
+  - [x] habilidades
+  - [x] habilidade oculta
+  - [x] status - contendo:
+    - [x] saúde
+    -x[x] ataque
+    -x[x] defesa
+    -x[x] ataque especial
+    -x[x] defesa especial
+    -x[x] velocidade
+  - [x] estágio de evolução ('baby', 'basic', 'stage-1', 'stage-2')
+  - [x] nível
+  - [x] nível de evolução
+  - [x] pontos de experiência
+  - [x] apelido.
   
 Ex.:
 ```javascript
@@ -175,11 +175,11 @@ const pokemon = {
 ```
 
 Para o nosso pokemon crie alguns métodos:
-- [ ] Usar um movimento - O treinador deve escolher um dos movimentos da lista de seu Pokemon. O método deve retornar uma string contendo `"Nome_do_Pokemon usou Nome_do_ataque"`. Se o movimento selecionado não existir deve retornar a string dizendo `"Nome_do_Pokemon não pode usar Nome_do_ataque"`;
+- [x] Usar um movimento - O treinador deve escolher um dos movimentos da lista de seu Pokemon. O método deve retornar uma string contendo `"Nome_do_Pokemon usou Nome_do_ataque"`. Se o movimento selecionado não existir deve retornar a string dizendo `"Nome_do_Pokemon não pode usar Nome_do_ataque"`;
 
-- [ ] Treinar o pokemon - Esse método deve receber como parâmetro um número que irá ser adicionado aos pontos de experiência (`exp`) do pokemon. A cada 100 pontos seu pokemon sobe um nível (`level`) e os pontos de experiência são zerados;
+- [x] Treinar o pokemon - Esse método deve receber como parâmetro um número que irá ser adicionado aos pontos de experiência (`exp`) do pokemon. A cada 100 pontos seu pokemon sobe um nível (`level`) e os pontos de experiência são zerados;
 
-- [ ] Evoluir o pokemon - Para evoluir seu pokemon, ele deve ter alcançado o nível mínimo necessário: `evolution_level`. Ao evoluir um pokemon, as propriedades do pokemon serão atualizadas de acordo com os valores recebidos como parâmetro.
+- [x] Evoluir o pokemon - Para evoluir seu pokemon, ele deve ter alcançado o nível mínimo necessário: `evolution_level`. Ao evoluir um pokemon, as propriedades do pokemon serão atualizadas de acordo com os valores recebidos como parâmetro.
 Alterações:
 	- O campo `name` será alterado conforme o parâmetro;
 	- O campo `number` deve ser incrementado;

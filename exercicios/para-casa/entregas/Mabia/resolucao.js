@@ -1,0 +1,1 @@
+//pokedex, criar um objeto de pokemons

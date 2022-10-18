@@ -5,6 +5,7 @@ function Employee(firstName, lastName, salary) {
     employee.firstName = firstName;
     employee.lastName = lastName;
     employee.salary = salary; 
+    employee.benefits = []
     employee.raiseSalary = (percentage) => {
         const increseOfSalary = employee.salary * percentage;
         const newSalary = employee.salary + increseOfSalary;
@@ -13,13 +14,25 @@ function Employee(firstName, lastName, salary) {
 
         return newSalary
     }
+    employee.addBenefits = (benefit) => {
+        employee.benefits = [...employee.benefits, ...benefit]
+    }
+
+    employee.removeBenefits = (benefit) => {
+        employee.benefits = employee.benefits.filter((item) => benefit !== item)
+    }
+
+    employee.listOfBenefits = () => employee.benefits 
 
     return employee;
 }
 
 const igorViana = Employee('Igor', 'Viana', 14000)
-console.log(igorViana)
 igorViana.raiseSalary(0.1)
-console.log(igorViana)
+igorViana.addBenefits(['VR', 'VA', 'Gympass'])
+igorViana.removeBenefits('VA')
+console.log(igorViana.listOfBenefits())
+
+
 
 

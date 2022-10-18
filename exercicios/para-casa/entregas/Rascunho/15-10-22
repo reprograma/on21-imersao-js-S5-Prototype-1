@@ -1,11 +1,21 @@
-let animal = {
+/* let animal = {
   type: "cachorro",
   name: "Aslam",
   age: 3,
   hobbies: ["comer", "brincar", "correr atras das motos"],
   //propriedade
   "can I have": true,
+  eat: function eat(){
+    // ...
+  }
 };
+ */
+
+function eat() {
+  console.log("o animal está comendo");
+}
+
+const eat = "string";
 
 let animal2 = {};
 
@@ -14,4 +24,10 @@ animal2.name = "Aslam";
 animal2.age = 3;
 animal2.hobbies = ["comer", "brincar", "correr atras das motos"];
 animal["can I have"] = true;
+animal.eat = eat;
+animal.play = function play() {
+  console.log(`O primeiro hobby é ${this.hobbies[0]}`);
+};
+animal.play();
+
 console.log(animal.name);

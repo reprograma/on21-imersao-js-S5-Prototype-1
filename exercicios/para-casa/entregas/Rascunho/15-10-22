@@ -25,6 +25,7 @@ animal2.age = 3;
 animal2.hobbies = ["comer", "brincar", "correr atras das motos"];
 animal["can I have"] = true;
 animal.eat = eat;
+animal.hobby1 = this.hobbies[0];
 animal.play = function play() {
   console.log(`O primeiro hobby é ${this.hobbies[0]}`);
 };

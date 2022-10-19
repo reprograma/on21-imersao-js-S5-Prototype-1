@@ -1,13 +1,10 @@
-/*- Type: deve possuir:
-  - [ ] um nome
-  - [ ] um array para taxa de dano recebido por tipos
-  - [ ] um array para danos aplicados por tipos.
-*/
+// Type: deve possuir:
+//  um nome
+//  um array para taxa de dano recebido por tipos
+//  um array para danos aplicados por tipos.
+// Ex.:
 
-// exemplo
-
-
-const Pokedex = {
+const type = {
 	name: 'Grass',
 	damage_dealt: [
 		{ name: 'bug', value: 0.5 },

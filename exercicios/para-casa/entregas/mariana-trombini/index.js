@@ -21,6 +21,7 @@ const bulbasaur = new CreatePokemon('Bulbasaur', 1, [new CreateType('Grass', dam
 // new CreateAbilities(abilitiesByType.overgrow.name, abilitiesByType.overgrow.summary, abilitiesByType.overgrow.effect), { hp: 80, attack: 99, defense: 69, 's-attack': 35, 's-defense': 75, speed: 85 }, new CreateMove(moveByType.synthesis.name, moveByType.synthesis.type, moveByType.synthesis.summary, moveByType.synthesis.power, moveByType.synthesis.target, moveByType.synthesis.accuracy, moveByType.synthesis.priority))
 
 // bulbasaur.train(3620)
+// bulbasaur.evolve('Blastoise', 32)
 
 // bulbasaur.train(150)
 // bulbasaur.train(99)

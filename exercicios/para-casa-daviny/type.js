@@ -18,5 +18,5 @@ const bug = new Type('bug',
 console.log(bug)
 
 
-modules.exports = Type
+module.exports = Type
 

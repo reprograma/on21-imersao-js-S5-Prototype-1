@@ -9,5 +9,5 @@ const bug = new Ability('Overgrow', 'Strengthens Grass moves to inflict 1.5× da
 console.log(bug)
 
 
-modules.exports = Ability
+module.exports = Ability
 

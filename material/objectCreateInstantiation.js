@@ -13,21 +13,17 @@ const animalMethods = {
 }
 
 function Animal(type, name, age) {
-    const animal = {}
+    const animal = Object.create(animalMethods)
 
     animal.type  = type
     animal.name = name
     animal.age = age
-    animal.energy = 0;
-    
-    animal.eat = animalMethods.eat;
-    animal.sleep = animalMethods.sleep;
+    animal.energy = 0
+
     return animal
 }
 
-const animal1 = Animal('gato', 'Caco', 11)
-console.log(animal1.sleep(15));
-console.log(animal1.eat());
-console.log(animal1.sleep(80));
+const animal1 = Animal('Gato', 'Docinho', 11)
 
-console.log(animal1);
+console.log(animal1)
+console.log(animal1.eat())

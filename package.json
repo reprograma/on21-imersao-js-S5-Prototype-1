@@ -1,0 +1,20 @@
+{
+  "name": "on21-imersao-js-s5-prototype-1",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">   <img src=\"assets/reprograma-fundos-claros.png\" alt=\"logo reprograma\" width=\"500\"> </h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node exercicios/para-casa/entregas/renata-igarashi/pokemon.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renataigarashi/on21-imersao-js-S5-Prototype-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renataigarashi/on21-imersao-js-S5-Prototype-1/issues"
+  },
+  "homepage": "https://github.com/renataigarashi/on21-imersao-js-S5-Prototype-1#readme"
+}

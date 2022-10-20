@@ -1,7 +1,3 @@
-const { type1, type2, type3 } = require("./Type.js");
-const { ability1, ability2, ability3 } = require("./Abilities.js");
-const { SharedMethods } = require("./SharedMethods.js");
-
 function Creature(
   name,
   number,
@@ -9,91 +5,74 @@ function Creature(
   abilities,
   hidden_ability,
   stats,
+  moves,
   evolution_stage,
   level,
   evolution_level,
   exp,
   nickname
 ) {
-  const creature = {
-    name: name,
-    number: number,
-    types: types,
-    abilities: abilities,
-    hidden_ability: hidden_ability,
-    stats: stats,
-    evolution_stage: evolution_stage,
-    level: level,
-    evolution_level: evolution_level,
-    exp: exp,
-    nickname: nickname,
-    UseMovement: SharedMethods.UseMovement,
-    TrainCreature: SharedMethods.TrainCreature,
-    EvolveCreature: SharedMethods.EvolveCreature,
-  };
-
-  return creature;
+  this.name = name;
+  this.number = number;
+  this.types = types;
+  this.abilities = abilities;
+  this.hidden_ability = hidden_ability;
+  this.stats = stats;
+  this.moves = moves;
+  this.evolution_stage = evolution_stage;
+  this.level = level;
+  this.evolution_level = evolution_level;
+  this.exp = exp;
+  this.nickname = nickname;
 }
 
-function Stats(hp, attack, defense, s_attack, s_defense, speed) {
-  const stats = {
-    hp: hp,
-    attack: attack,
-    defense: defense,
-    s_attack: s_attack,
-    s_defense: s_defense,
-    speed: speed,
-  };
+Creature.prototype.UseMovement = function UseMovement(move) {
+  if (this.moves.includes(move)) {
+    return `${this.name} is using movement "${move.name}".`;
+  } else return `${this.name} can't use movement "${move.name}".`;
+};
 
-  return stats;
-}
+Creature.prototype.TrainCreature = function TrainCreature(number) {
+  console.log(
+    `Training ${this.name}... Current: Exp ${this.exp} | Level ${this.level}`
+  );
+  for (let i = number; i > 0; i--) {
+    if (this.exp < 100) {
+      this.exp++;
+    } else {
+      this.level++;
+      this.exp = 0;
+    }
+  }
+  return `Training complete! Final: Exp ${this.exp} | Level ${this.level}`;
+};
 
-// Creature 1
-const stats1 = Stats(45, 49, 25, 70, 80, 90);
-const creature1 = Creature(
-  "Lestat",
-  1,
-  type1,
-  ability1,
-  null,
-  stats1,
-  "basic",
-  3,
-  10,
-  5,
-  "Lele"
-);
+Creature.prototype.EvolveCreature = function EvolveCreature(
+  name,
+  type,
+  abilities,
+  hidden_ability,
+  stats,
+  moves,
+  evolution_level
+) {
+  if (this.level >= this.evolution_level) {
+    this.name = name;
+    this.number++;
+    this.type = type;
+    this.abilities = abilities;
+    this.hidden_ability = hidden_ability;
+    this.stats = stats;
+    this.moves = moves;
+    this.evolution_level = evolution_level;
 
-// Creature 2
-const stats2 = Stats(65, 33, 45, 60, 60, 75);
-const creature2 = Creature(
-  "Jacob",
-  2,
-  type2,
-  ability2,
-  null,
-  stats2,
-  "baby",
-  2,
-  5,
-  3,
-  "JJ"
-);
+    const evolutionStages = ["baby", "basic", "stage-1", "stage-2"];
+    let indexOfCurrentStage = evolutionStages.indexOf(this.evolution_stage);
+    this.evolution_stage = evolutionStages[++indexOfCurrentStage];
 
-// Creature 3
-const stats3 = Stats(55, 100, 40, 35, 45, 10);
-const creature3 = Creature(
-  "Dumbledore",
-  3,
-  type3,
-  ability3,
-  null,
-  stats3,
-  "stage-1",
-  10,
-  30,
-  50,
-  "Dumbinho"
-);
+    return `Creature successfully evolved to '${this.name}'.`;
+  } else
+    return `${this.name} can't evolve yet. Current Level: ${this.level} | Evolution Level: ${this.evolution_level}`;
+};
 
-module.exports = { creature1, creature2, creature3 };
+module.exports = Creature;

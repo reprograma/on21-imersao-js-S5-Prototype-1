@@ -50,21 +50,11 @@ CreatePokemon.prototype.evolve = function evolve(name, evolution_level, type, ab
   } else {
     console.log('Insufficient level to evolve!');
   }
-  if (type) {
-    this.type.push(type)
-  }
-  if (abilities) {
-    this.abilities.push(abilities)
-  }
-  if (hidden_abilities) {
-    this.hidden_abilities.push(hidden_abilities)
-  }
-  if (stats) {
-    this.stats = stats
-  }
-  if (move) {
-    this.moves.push(move)
-  }
+  this.type.push(type)
+  this.abilities.push(abilities)
+  this.hidden_abilities.push(hidden_abilities)
+  this.stats = stats
+  this.moves.push(move)
 }
 
 

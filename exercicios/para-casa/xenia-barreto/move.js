@@ -1,13 +1,3 @@
-// Move: deve possui:
-//  nome
-//  tipo
-//  descrição
-//  poder
-//  alvo ('self', 'allies', 'selected')
-//  precisão
-//  prioridade.
-// Ex.:
-
 const move = {
     name: 'Aromatherapy',
     type: {
@@ -34,3 +24,16 @@ const another_move = {
     target: ['selected'],
     priority: 0
 }
+
+function Move(name, type, summary, power, target, accuracy, priority){
+
+    this.name = name;
+    this.type = type;
+    this.summary= summary;
+    this.power = power;
+    this.target = target;
+    this.accuracy = accuracy;
+    this.priority = priority;
+}
+
+module.exports = Move;

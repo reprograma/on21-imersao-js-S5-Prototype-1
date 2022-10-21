@@ -86,7 +86,7 @@ const another_move = {
   - [ ] nome
   - [ ] número
   - [ ] tipo(s)
-  - [ ] habilidades
+  - [ ] habures the entire party of major status effectlidades
   - [ ] habilidade oculta
   - [ ] status - contendo:
     - [ ] saúde

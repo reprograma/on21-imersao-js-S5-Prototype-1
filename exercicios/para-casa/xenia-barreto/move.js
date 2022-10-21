@@ -36,4 +36,7 @@ function Move(name, type, summary, power, target, accuracy, priority){
     this.priority = priority;
 }
 
+const move1 = new Move('Exemplo', 'type', 'summary', 'power', 'target', 'accuracy', 'priority')
+console.log(move1);
+
 module.exports = Move;

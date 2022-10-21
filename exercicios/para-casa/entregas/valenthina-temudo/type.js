@@ -1,4 +1,3 @@
-// TYPE
 const damage = {
   name: 'Grass',
 	damage_dealt: [

@@ -1,11 +1,11 @@
-=======
+
 // Resolução da Dani
-// function createEmployee(firstname, lastname, salary) {
+// function createEmployee(firstName, lastName, salary) {
 //   const employee = {};
 
-//   employee.id = "id" + new Date().getTime();
-//   employee.firstname = firstname;
-//   employee.lastname = lastname;
+//   employee.id = "id" + new Date().getTime(); 
+//   employee.firstName = firstName;
+//   employee.lastName = lastName;
 //   employee.salary = salary;
 
 //   return employee;
@@ -19,13 +19,12 @@
 
 
 //Resolução da Gabi
-// function employee(firstname, lastName, salary) {
+// function Employee(firstName, lastName, salary) {
 
 //   let employee = {}
   
- 
 //   employee.id = Math.floor(Math.random() * 100).toFixed(1)
-//   employee.firstname = firstname;
+//   employee.firstName = firstName;
 //   employee.lastName = lastName;
 //   employee.salary = salary;
 
@@ -38,7 +37,7 @@
   
 // } 
 
-// const newEmployee = employee('Luiza', 'Tavares', 12_000);
+// const newEmployee = Employee('Luiza', 'Tavares', 12_000);
 // console.log(newEmployee);
 
 // console.log(newEmployee.raiseSalary(0.10));
@@ -66,8 +65,7 @@ function createEmployee(firstName, lastName, salary) {
   employee.salary = salary;
   
   employee.raiseSalary = function (percent) {
-      const newSalary = (this.salary
-   * percent + this.salary);
+      const newSalary = (this.salary * percent + this.salary);
       this.salary = newSalary;
       return `O novo salário é ${newSalary}`;
       };

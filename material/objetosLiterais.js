@@ -46,7 +46,7 @@ console.log(animal2);
 
 animal1.eat();
 animal2.eat();
-=======
+
 // const animal = {
 //   type: 'cachorro',
 //   name: 'Aslam',

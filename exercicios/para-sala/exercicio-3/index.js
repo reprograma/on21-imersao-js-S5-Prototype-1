@@ -1,43 +1,52 @@
 //exercicios feitos pela profa aqui
 
-function Employee(firstName, lastName, salary, benefits) {
-    const employee = {};
-  
-    employee.id = Math.floor(Math.random() * 100);
-    employee.firstName = firstName;
-    employee.lastName = lastName;
-    employee.salary = salary;
-    employee.benefits = benefits;
-  
-    employee.raiseSalary = function raiseSalary(percent) {
-      const aumento = this.salary * (percent / 100);
-      this.salary = this.salary + aumento;
-      return `O novo salário de ${this.firstName} é de: R$ ${this.salary}`;
-    };
+function generateId() {
+	const crypto = require('crypto');
+	const id = crypto.randomUUID();
+	return id;
+}
 
-    employee.addBenefits = function addBenefit(benefit) {
-      return this.benefits.push(benefit);
-    };
-    
-    employee.removeBenefits = function removeBenefits(benefit) {
-      return (this.benefits = this.benefits.filter((b) => b != benefit));
-    };
-  
-    employee.listBenefits = function listBenefits() {
-      return `O funcionário possui estes benefícios: ${this.benefits}`;
-    };
-  
-    return employee;
-  }
+function Employee(firstName, lastName, salary) {
+	let employee = {};
 
-  const employee1 = Employee("Cláudia Maria", "Prudente", 10_000, [
-    "VR",
-    "VT",
-    "gympass",
-    "auxílio creche",
-  ]);
-  
-  console.log(employee1.listBenefits());
-  employee1.removeBenefits("VR");
-  console.log(employee1.listBenefits());
-  
+	employee.id = generateId();
+	employee.firstName = firstName;
+	employee.lastName = lastName;
+	employee.salary = salary;
+	employee.benefits = [];
+
+	employee.raiseSalary = function raiseSalary(percent) {
+		this.salary += (this.salary * percent) / 100;
+		return `O salário com o aumento totaliza R$ ${this.salary}`;
+	};
+
+	employee.addBenefits = function addBenefits(benefit) {
+		this.benefits.push(benefit);
+		console.log(`${benefit} adicionado aos benefícios`);
+	};
+
+	employee.removeBenefits = function removeBenefits(benefit) {
+		this.benefits = this.benefits.filter(function (element) {
+			return element !== benefit;
+		});
+		console.log(`${benefit} removido dos benefícios`);
+	};
+
+	employee.listBenefits = function listBenefits() {
+		this.benefits.forEach((benefit) => console.log(`- ${benefit}`));
+	};
+
+	return employee;
+}
+
+const employee1 = Employee('Luara', 'Kerlen', 10000);
+employee1.addBenefits(['VR','VA', 'Zenklub']);
+// employee1.addBenefits('VA');
+// employee1.addBenefits('Zenklub');
+employee1.removeBenefits('VA');
+employee1.listBenefits();
+
+console.log(employee1);
+console.log(employee1.listBenefits([]));
+console.log(employee1.addBenefits("Cartão Sesc"));
+console.log(employee1.removeBenefits("VR"));

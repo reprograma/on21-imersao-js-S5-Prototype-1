@@ -21,7 +21,7 @@ function Move(name, type, summary, power, target, accuracy, priority){
   console.log(waterMove);
   
   
-    module.exports = Move;
+
 
 
 

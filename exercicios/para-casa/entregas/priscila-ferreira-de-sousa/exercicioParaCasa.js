@@ -1,11 +1,4 @@
-/*
-damage_dealts: dano causado
-damage_taken: dano sofrido
-summary: resumo
-target: alvo
-accuracy:precisao
-DamageType: tipo de danos
-*/
+//exercício incompleto
 
 const pokemonMethods = {
     atack: function atack (move, attackedPokemon, attackingPokemon){

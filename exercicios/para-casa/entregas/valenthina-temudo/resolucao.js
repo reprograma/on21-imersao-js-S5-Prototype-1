@@ -1,39 +1,6 @@
-// TYPE
-function type(name) {
-  const type = {};
 
-  type.name = name;
-  type.damage_dealt = [];
-  type.damage_dealt = function damage_dealt(name, value) {
 
-    damage_dealt.name = name;  
-    damage_dealt.value = value;
 
-    return damage_dealt;
-  }
-
-  type.damage_taken = [];
-  type.damage_taken = function damage_taken(name, value) {
-
-    damage_taken.name = name;  
-    damage_taken.value = value;
-
-    return damage_taken;
-  }
-
-  return type;
-}
-
-// ABILITY
-function ability(name, summary, effect){
-  const ability = {};
-
-  ability.name = name;
-  ability.summary = summary;
-  ability.effect = effect;
-
-  return ability;
-};
 
 // MOVE
 function move(name, description, power, target, accuracy, priority) {

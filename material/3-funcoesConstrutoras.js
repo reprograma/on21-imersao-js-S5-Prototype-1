@@ -16,3 +16,4 @@ function Animal(type, name, age) {
 
 // functional instantiation é a maneira como estou criando a função e instanciando um objeto
 const animal1 = Animal('tigre', 'Chaninho', 6); 
+console.log(animal1)

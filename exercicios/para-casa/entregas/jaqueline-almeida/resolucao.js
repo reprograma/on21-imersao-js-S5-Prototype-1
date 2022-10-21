@@ -6,9 +6,10 @@ function createType(name, damage_dealt, damage_taken){
     type.damage_dealt = damage_dealt;
     type.damage_taken = damage_taken;
 
-    return createType;
+    return type;
 }
 
+   
 
 function createAbilities(name,summary, effect){
 
@@ -18,10 +19,10 @@ function createAbilities(name,summary, effect){
 	abilities.summary = summary;
 	abilities.effect = effect; 
 
-    return createAbilities;
+    return abilities;
 }	
 
-function move(name,description,power, target, accuracy,propriety){
+function movePokemon(name,description,power, target, accuracy,propriety){
 
     const move = {};
 
@@ -42,7 +43,7 @@ const pokemonMethods = {
     evolution: function evolution(){},
 }
 
-function createPokemon(name,number, type,abilities, hidden_ability, evolution_stage, level, exp, evolution_level, nickname){
+function createPokemon(name,number, type,abilities, hidden_ability,  evolution_stage, level, exp, evolution_level, nickname){
 
     const pokemon = {};
 
@@ -69,10 +70,10 @@ function createPokemon(name,number, type,abilities, hidden_ability, evolution_st
     pokemon.training = pokemonMethods.training;
     pokemon.evolution = pokemonMethods.evolution;
 
-    return createPokemon;
+    return pokemon;
 }
 
-const Bulbasaur = new createPokemon('Pikachu', 1, 'fire', 1, 20, 0, 'Pika');
+const Bulbasaur = new createPokemon('Pikachu', 1, 'raio', 'varios', 'big raio', 1, 20, 0, 2, 'Pika');
 
 Bulbasaur.type = createType('Grass', ['bug', 1, 'dark', 1], ['bug', 0.5, 'dark', 1]);
 Bulbasaur.abilities = createAbilities('Overgrow', 'Strengthens Grass', 'When this Pokemon');

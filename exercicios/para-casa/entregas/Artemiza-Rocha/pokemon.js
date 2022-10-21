@@ -20,12 +20,10 @@ function Pokemon ( name, number , type , ability, hidden_ability, stats, evoluti
         this.nickname = nickname;
 
    
-      return pokemon;
-
    }
 
 const movimento = new Pokemon ('Balbasaur', 1,'Grass', 'Overgrow', 'Chlorophyll', 45, 'basic', 1, 16, 0, 'Robertinho' )
 
-console.log(movimento)
+
 
 

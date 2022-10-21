@@ -1,4 +1,4 @@
-# Exercício de Sala 🏫  
+g# Exercício de Sala 🏫  
 
 - Conteúdo teórico: 
 [Prototypal Instantiation](https://github.com/reprograma/on21-imersao-js-S5-Prototype-1/blob/main/README.md#prototypal-instantiation)

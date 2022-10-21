@@ -1,5 +1,5 @@
 const Type = require ('./type.js')
-const Ability = require('./abilities')
+
 
 
 function Move(name, type, summary, power, target, accuracy, priority){
@@ -21,9 +21,7 @@ function Move(name, type, summary, power, target, accuracy, priority){
   console.log(waterMove);
   
   
-    module.exports = {Move},
-                    {Ability},
-                     {Type }
+    module.exports = Move;
 
 
 

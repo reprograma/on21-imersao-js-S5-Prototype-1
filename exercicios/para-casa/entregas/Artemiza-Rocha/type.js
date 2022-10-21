@@ -8,4 +8,3 @@
   const WaterType = new Type('Squirite', 'Torrent', 'Electric')
   console.log(WaterType)
   
-module.exports = Type;

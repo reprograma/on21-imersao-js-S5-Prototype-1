@@ -1,70 +1,54 @@
 //exercício incompleto
 
 function DamageType(name, value) {
-    const damageType = {};
-    damageType.name = name;
-    damageType.value = value;
-
-    return damageType;
+    this.name = name;
+    this.value = value;
 }
 
 function Type(name, damage_dealts, damage_taken) { //move type
-    const type = {};
-    type.name = name;
-    type.damage_dealts = damage_dealts; //array de DamageTypes
-    type.damage_taken = damage_taken; //array de DamageTypes
-
-    return type;
+    this.name = name;
+    this.damage_dealts = damage_dealts; //array de DamageTypes
+    this.damage_taken = damage_taken; //array de DamageTypes
 }
 
 function Ability(name, summary, effect) {
-    const ability = {};
-    ability.name = name;
-    ability.summary = summary;
-    ability.effect = effect;
-
-    return ability;
+    this.name = name;
+    this.summary = summary;
+    this.effect = effect;
 }
 
 function Move(name, type, summary, power, target, accuracy, priority) {
-    const move = {};
-    move.name = name;
-    move.type = type; //Type
-    move.summary = summary;
-    move.power = power;
-    move.target = target; //  ('self', 'allies', 'selected')
-    move.accuracy = accuracy;
-    move.priority = priority;
-
-    return move;
+    this.name = name;
+    this.type = type; //Type
+    this.summary = summary;
+    this.power = power;
+    this.target = 'self'; //  ('self', 'allies', 'selected')
+    this.accuracy = accuracy;
+    this.priority = priority;
 }
 
 function Stats(hp, attack, defense, specialAtack, specialDefense, speed) {
-    const stats = {};
-    stats.hp = hp;
-    stats.attack = attack;
-    stats.defense = defense;
-    stats.specialAtack = specialAtack;
-    stats.specialDefense = specialDefense;
-    stats.speed = speed;
-
-    return stats;
+    this.hp = hp;
+    this.attack = attack;
+    this.defense = defense;
+    this.specialAtack = specialAtack;
+    this.specialDefense = specialDefense;
+    this.speed = speed;
 }
 
 function Pokemon(name, number, types, abilities, hidden_ability, stats,
     evolution_stage, level, evolution_level, exp, nickname) {
-    let pokemon = Object.create(Pokemon.prototype);
-    pokemon.name = name;
-    pokemon.number = number;
-    pokemon.types = types;  //array de Type
-    pokemon.abilities = abilities;   //array de Abilities
-    pokemon.hidden_ability = hidden_ability; //Ability
-    pokemon.stats = stats; //Stats
-    pokemon.evolution_stage = evolution_stage;  // ('baby', 'basic', 'stage-1', 'stage-2')
-    pokemon.level = level;
-    pokemon.evolution_level = evolution_level;
-    pokemon.exp = exp;
-    pokemon.nickname = nickname;
+    this.name = name;
+    this.number = number;
+    this.types = types;  //array de Type
+    this.abilities = abilities;   //array de Abilities
+    this.hidden_ability = hidden_ability; //Ability
+    this.stats = stats; //Stats
+    this.evolution_stage = 'baby';  // ('baby', 'basic', 'stage-1', 'stage-2')
+    this.level = level;
+    this.evolution_level = evolution_level;
+    this.exp = exp;
+    this.nickname = nickname;
 }
 
 Pokemon.prototype.atack = function atack(move, attackedPokemon, attackingPokemon) {

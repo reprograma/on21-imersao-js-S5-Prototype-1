@@ -9,4 +9,3 @@ function Ability(name, summary, effect){
 
 const ability1 = new Ability('Wartotle', 'Weaknesses',' Speed')
 
-module.exports = Ability;

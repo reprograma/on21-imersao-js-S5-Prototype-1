@@ -46,7 +46,7 @@ Pokemon.prototype.trainPokemon = function trainPokemon(exp) {
     Level: ${this.level}`;
   } else {
     this.level = this.level + Math.floor(auxExp / 100);
-    this.exp = auxExp % 100;
+    this.exp = 0;
     return `----------------------- 
     Surpresa! Seu pokemon avançou de level.
     Experiência de ${this.name}: ${this.exp}
@@ -73,6 +73,7 @@ Pokemon.prototype.evolvePokemon = function evolvePokemon(
     this.abilities = abilities;
     this.hidden_ability = hidden_ability;
     this.stats = stats;
+    // this.moves = checkParameters(moves, this.moves);
     this.moves = moves;
     this.evolution_level = evolution_level;
 
@@ -84,6 +85,27 @@ Pokemon.prototype.evolvePokemon = function evolvePokemon(
   Level atual: ${this.level}
   Level de evolução: ${this.evolution_level}`;
   }
+};
+
+const checkParameters = function (evoluteParameters, actualParameters) {
+  let newParameters = [];
+  let auxParameter = [];
+  actualParameters.forEach((parameter) => {
+    auxParameter = evoluteParameters.filter(
+      (elem) => elem.name === parameter.name
+    );
+    if (auxParameter.length === 0) {
+      newParameters.push(parameter);
+    }
+  });
+
+  evoluteParameters.forEach((parameter) => {
+    newParameters.push(
+      newParameters.filter((elem) => elem.name != parameter.name)
+    );
+  });
+
+  return newParameters;
 };
 
 module.exports = Pokemon;

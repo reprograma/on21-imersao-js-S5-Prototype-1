@@ -199,29 +199,25 @@ console.log(PokemonBulbasaur.attack(MoveSynthesis));
 console.log(PokemonBulbasaur.training(70));
 console.log(PokemonBulbasaur.training(600));
 
-console.log(PokemonBulbasaur.evolute());
-
-console.log(
-  PokemonBulbasaur.evolute(
-    "Ivysaur",
-    [TypeGrass, TypePoison],
-    [AbilitiesOvergrow],
-    {
-      name: "Chlorophyll",
-      summary: "Doubles Speed during strong sunlight.",
-      effect: "This Pokémon's Speed is doubled during strong sunlight.",
-    },
-    {
-      hp: 45,
-      attack: 49,
-      defense: 49,
-      "s-attack": 65,
-      "s-defense": 65,
-      speed: 45,
-    },
-    [MoveAromatherapy, MoveSynthesis, MoveVineWhip],
-    45
-  )
+PokemonBulbasaur.evolute(
+  "Ivysaur",
+  [TypeGrass, TypePoison],
+  [AbilitiesOvergrow],
+  {
+    name: "Chlorophyll",
+    summary: "Doubles Speed during strong sunlight.",
+    effect: "This Pokémon's Speed is doubled during strong sunlight.",
+  },
+  {
+    hp: 45,
+    attack: 49,
+    defense: 49,
+    "s-attack": 65,
+    "s-defense": 65,
+    speed: 45,
+  },
+  [MoveAromatherapy, MoveSynthesis, MoveVineWhip],
+  45
 );
 
 console.log(PokemonBulbasaur);

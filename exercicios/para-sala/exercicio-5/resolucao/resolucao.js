@@ -1,4 +1,3 @@
-// Resolução da Claudia
 const employeeMethods = {
   raiseSalary: function raiseSalary(percent) {
     const aumento = this.salary * (percent / 100);
@@ -29,7 +28,7 @@ function Employee(firstName, lastName, salary) {
   return employee;
 }
 
-const employee1 = Employee("Luara", "Kerlen", 10000);
+const employee1 = Employee("Cláudia Maria", "Prudente", 10_000);
 employee1.addBenefits("VR");
 
 console.log(employee1.listBenefits());

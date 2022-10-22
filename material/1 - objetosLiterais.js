@@ -9,22 +9,20 @@
 //   }
 // }
 
-
 function eat() {
-  console.log('O animal está comendo')
+  console.log("O animal está comendo");
 }
 
-const animal = {}
+const animal = {};
 
-animal.type = 'cachorro';
-animal.name = 'Aslam';
+animal.type = "cachorro";
+animal.name = "Aslam";
 animal.age = 3;
-animal.hobbies = ['comer', 'brincar', 'correr atrás das motos'];
-animal['can I have'] = true;
+animal.hobbies = ["comer", "brincar", "correr atrás das motos"];
+animal["can I have"] = true;
 animal.eat = eat;
 animal.play = function play() {
-  console.log(`O primeiro hobby é ${this.hobbies}`)
-}
+  console.log(`O primeiro hobby é ${this.hobbies}`);
+};
 
-animal.eat()
-
+animal.eat();

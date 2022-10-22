@@ -1,46 +1,44 @@
-//exercicios feitos pela profa aqui
-
-//Resolução da Michele
-const employeeMetodos = {
+const employeeMethods = {
   raiseSalary: function raiseSalary(percent) {
-      return `O novo salário é: ${(this.salary * percent) + this.salary}`;
+    const aumento = this.salary * (percent / 100);
+    this.salary = this.salary + aumento;
+    return `O novo salário de ${this.firstName} é de: R$ ${this.salary}`;
   },
-  addBenefits: function addBenefits(benefit) {
-      this.beneficio.push(benefit);
+  addBenefits: function addBenefit(benefit) {
+    return this.benefits.push(benefit);
   },
   removeBenefits: function removeBenefits(benefit) {
-      return (this.beneficio = this.beneficio.filter(item => item != benefit
-      ))
+    this.benefits = this.benefits.filter((element) => element != benefit);
+
+    return `O benefício ${benefit} foi removido da lista`;
   },
   listBenefits: function listBenefits() {
-      return this.beneficio;
-  }
-}
+    return `O funcionário possui estes benefícios: ${this.benefits}`;
+  },
+};
 
-//função construtora
-function employee(firstname, lastName, salary) {
-
-  const employee = {}
-
-  employee.id = Math.floor(Math.random() * 1000);
-  employee.firstname = firstname;
+function Employee(firstName, lastName, salary) {
+  const employee = {};
+  employee.id = Math.floor(Math.random() * 100);
+  employee.firstName = firstName;
   employee.lastName = lastName;
   employee.salary = salary;
-  employee.beneficio = [];
+  employee.benefits = [];
 
-  employee.raiseSalary = employeeMetodos.raiseSalary;
-  employee.addBenefits = employeeMetodos.addBenefits;
-  employee.removeBenefits = employeeMetodos.removeBenefits;
-  employee.listBenefits = employeeMetodos.listBenefits;
+  employee.raiseSalary = employeeMethods.raiseSalary;
+  employee.addBenefits = employeeMethods.addBenefits;
+  employee.removeBenefits = employeeMethods.removeBenefits;
+  employee.listBenefits = employeeMethods.listBenefits;
 
   return employee;
 }
 
-const funcionario2 = employee("Sarah", "Torres", 5300);
-console.log(funcionario2);
-funcionario2.addBenefits("vt");
-funcionario2.addBenefits("vA");
-funcionario2.addBenefits("vale");
-funcionario2.removeBenefits("vale");
-console.log(funcionario2.listBenefits());
-console.log(funcionario2.raiseSalary(0.4));
+const employee1 = Employee("Cláudia Maria", "Prudente", 10_000);
+employee1.addBenefits("VR");
+
+console.log(employee1.listBenefits());
+console.log(employee1.removeBenefits("VR"));
+console.log(employee1.listBenefits());
+console.log(employee1.salary);
+employee1.raiseSalary(15);
+console.log(employee1.salary);

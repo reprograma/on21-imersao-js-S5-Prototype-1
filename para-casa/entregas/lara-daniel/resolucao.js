@@ -35,13 +35,12 @@ function Pokemon(nome, numero, type, habilidades, habilidade_oculta, movimentos,
 }
 
 Pokemon.prototype.selecionarMovimento = function selecionarMovimento(movimentoSelecionado){
-    const encontraMovimentoSelecionado = this.movimentos.find(move => move.name === movimentoSelecionado)
-
-    if(encontraMovimentoSelecionado){
-        console.log(this.nome + " usou " + movimentoSelecionado)
+    if(this.movimentos.includes(movimentoSelecionado)){
+        console.log(this.nome + " usou " + movimentoSelecionado.nome)
+    } else {
+        console.log(this.nome + " não pode usar " + movimentoSelecionado.nome)
     }
-
-    console.log(this.nome + "não pode usar" + movimentoSelecionado)
+ 
 }
 
 Pokemon.prototype.treinar = function treinar(numExp){
@@ -51,9 +50,7 @@ Pokemon.prototype.treinar = function treinar(numExp){
         this.level++
         this.exp-=100
     }
-    if(this.exp < 0){
-        this.exp = 0
-    }
+
     console.log("EXP: " + this.exp + "\nLEVEL: " + this.level)
 }
 
@@ -70,12 +67,12 @@ const congelar = new Movimento('congelar', gelo, 'congelar oponente', 15, ['sele
 const raio = new Movimento('raio', eletrico, 'eletrocutar oponente', 200, ['selecionado', 'aliados', 'auto'], 50, 5)
 
 const pikachu = new Pokemon('Pikachu', 25, eletrico, [adaptacao, armadura], ['multiplicar','criar copias de si mesmo', 'confundir oponente'], raio, 'basico', 1, 16, 0, 'pikapikachu')
-const charmander = new Pokemon('Charmander', 1, fogo, [incendio], ['desaparecer', 'voar', 'desviar do ataque do oponente'], incendiar, 'basico', 2, 5, 1, 'jorge')
+const charmander = new Pokemon('Charmander', 1, fogo, [incendio], ['desaparecer', 'voar', 'desviar do ataque do oponente'], [incendiar], 'basico', 2, 5, 1, 'jorge')
 const gotinha = new Pokemon('Zé Gotinha', 13, gelo, armadura, ['imunidade', 'vacinas em formato de fotinha', 'aumento da imunidade'], congelar, 'avancado', 10, 1000, 70, 'zé gotinha')
 
-// console.log(fogo)
+//  console.log(fogo)
 // console.log(incendio)
 // console.log(incendiar)
 // console.log(charmander)
 // charmander.selecionarMovimento(incendiar)
-// charmander.treinar(10)
+// charmander.treinar(150)

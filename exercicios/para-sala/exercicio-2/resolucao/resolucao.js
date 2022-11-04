@@ -80,3 +80,17 @@ function createEmployee(firstName, lastName, salary) {
   console.log(funcionario1.raiseSalary(0.10));
 
   console.log(funcionario1)
+// função construtora
+function createEmployee(firstname, lastname, salary){
+    const employee = {};
+    employee.id = Math.floor(Math.random() * 100);
+    employee.firstName = firstname;
+    employee.lastname = lastname;
+    employee.salary = salary;
+
+    return employee;
+}
+
+
+const employee1 = createEmployee("Evelin", "Une", 10_000);
+const employee2 = createEmployee("Emily", "Une", 5000);

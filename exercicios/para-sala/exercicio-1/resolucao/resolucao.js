@@ -1,4 +1,5 @@
-const employee = {
+
+/*const employee = {
   id: 1,
   firstname: 'Gabriela',
   lastName: 'Tavares ',
@@ -22,4 +23,17 @@ const employee2 = {
   }
 }
 
-console.log(employee2.raiseSalary(0.10))
+console.log(employee2.raiseSalary(0.10))*/
+
+const employee = {};
+employee.id = 01;
+employee.firstName = 'Barbara';
+employee.lastName = 'Pereira';
+employee.salary = 30000;
+employee.raiseSalary = function raiseSalary(percent){
+                            let newSalary = this.salary + this.salary * ( percent/100 );
+                            return `O novo salário é ${newSalary}`
+                        }
+                        
+console.log(`Funcionário ${employee.firstName} ${employee.lastName}  ${employee.raiseSalary(10)}`)
+ 

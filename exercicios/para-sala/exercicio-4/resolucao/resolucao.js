@@ -1,46 +1,49 @@
-//exercicios feitos pela profa aqui
 
-//Resolução da Michele
-const employeeMetodos = {
-  raiseSalary: function raiseSalary(percent) {
-      return `O novo salário é: ${(this.salary * percent) + this.salary}`;
+const employeeMethods = {
+  raiseSalary: function  raiseSalary(percent){	  
+    let newSalary = this.salary + this.salary * ( percent/100 );
+    return `O novo salário é ${newSalary}`
   },
-  addBenefits: function addBenefits(benefit) {
-      this.beneficio.push(benefit);
+
+  addBenefits: function addBenefits(benefit){
+    this.benefits.push(benefit);
+    return benefit;
   },
+
   removeBenefits: function removeBenefits(benefit) {
-      return (this.beneficio = this.beneficio.filter(item => item != benefit
-      ))
+    (this.benefits = this.benefits.filter((element) => element !== benefit));
+    return `O benefício: **${benefit}** foi removido`
   },
-  listBenefits: function listBenefits() {
-      return this.beneficio;
+
+  listBenefits: function listBenefits(){
+    return this.benefits;
   }
 }
 
-//função construtora
-function employee(firstname, lastName, salary) {
-
-  const employee = {}
-
-  employee.id = Math.floor(Math.random() * 1000);
-  employee.firstname = firstname;
-  employee.lastName = lastName;
-  employee.salary = salary;
-  employee.beneficio = [];
-
-  employee.raiseSalary = employeeMetodos.raiseSalary;
-  employee.addBenefits = employeeMetodos.addBenefits;
-  employee.removeBenefits = employeeMetodos.removeBenefits;
-  employee.listBenefits = employeeMetodos.listBenefits;
-
-  return employee;
+function generateId(){
+  return new Date().getTime();	
 }
 
-const funcionario2 = employee("Sarah", "Torres", 5300);
-console.log(funcionario2);
-funcionario2.addBenefits("vt");
-funcionario2.addBenefits("vA");
-funcionario2.addBenefits("vale");
-funcionario2.removeBenefits("vale");
-console.log(funcionario2.listBenefits());
-console.log(funcionario2.raiseSalary(0.4));
+function Employee(firstName, lastName, salary, benefits){	  
+  const employee = {};
+
+    employee.id = generateId();    
+    employee.firstName = firstName;	
+    employee.lastName = lastName;
+    employee.salary = salary;	 
+    employee.benefits = benefits;	
+    employee.raiseSalary = employeeMethods.raiseSalary;
+    employee.addBenefits = employeeMethods.addBenefits;
+    employee.removeBenefits = employeeMethods.removeBenefits;
+    employee.listBenefits = employeeMethods.listBenefits;
+    return employee;
+}	
+
+let barbara = Employee('Bárbara', 'Pereira', 10000, ["VR", "VA", "convênio", "PLR", "14º salário"]);
+
+console.log(barbara);
+console.log(barbara.raiseSalary(10))
+console.log("Add: " + barbara.addBenefits("gympass"));
+console.log("list: " + barbara.listBenefits().join(" - "));	
+console.log( barbara.removeBenefits("14º salário"));
+console.log("new list: " + barbara.listBenefits().join(" - "));	

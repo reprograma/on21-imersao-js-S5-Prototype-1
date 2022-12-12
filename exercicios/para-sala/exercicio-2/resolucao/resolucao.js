@@ -1,3 +1,23 @@
+
+
+function Employee(firstName, lastName, salary){
+  const employee = {};
+  
+  employee.id = "id" + new Date().getTime();
+  employee.firstName = firstName;
+  employee.lastName = lastName;
+  employee.salary = salary;
+  employee.raiseSalary = function raiseSalary(percent){
+      let newSalary = this.salary + this.salary * ( percent/100 );
+      return `O novo salário é ${newSalary}`
+  }
+  return employee;
+}
+
+let barbara = Employee('Bárbara', 'Pereira', 10000)
+console.log(barbara);
+console.log(barbara.raiseSalary(10));
+
 // Resolução da Dani
 // function createEmployee(firstname, lastname, salary) {
 //   const employee = {};
@@ -43,7 +63,7 @@
 // console.log(newEmployee.raiseSalary(0.10));
 
 
-//Resolução da Erica
+/*Resolução da Erica
 function create_UUID(){
   var dt = new Date().getTime();
   var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -58,7 +78,7 @@ function createEmployee(firstName, lastName, salary) {
   const employee = {}
   
   // employee.create_UUID();
-  // employee.id = Math.floor(Math.random() * 100).toFixed(1)
+  employee.id = Math.floor(Math.random() * 100).toFixed(1)
   employee.id = create_UUID();
   employee.firstName = firstName;
   employee.lastName = lastName;
@@ -79,4 +99,4 @@ function createEmployee(firstName, lastName, salary) {
   
   console.log(funcionario1.raiseSalary(0.10));
 
-  console.log(funcionario1)
+  console.log(funcionario1)*/

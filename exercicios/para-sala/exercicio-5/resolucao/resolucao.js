@@ -1,40 +1,39 @@
-// Resolução da Claudia
 const employeeMethods = {
-  raiseSalary: function raiseSalary(percent) {
-    const aumento = this.salary * (percent / 100);
-    this.salary = this.salary + aumento;
-    return `O novo salário de ${this.firstName} é de: R$ ${this.salary}`;
-  },
-  addBenefits: function addBenefit(benefit) {
-    return this.benefits.push(benefit);
-  },
-  removeBenefits: function removeBenefits(benefit) {
-    this.benefits = this.benefits.filter((element) => element != benefit);
+    raiseSalary: function raiseSalary(percent){
+        let newSalary = this.salary + this.salary * ( percent/100 );
+        return `O novo salário é ${newSalary}`
+    },
+    
+    removeBenefits: function removeBenefits(){
+        return this.benefits.pop();  
+    },
 
-    return `O benefício ${benefit} foi removido da lista`;
-  },
-  listBenefits: function listBenefits() {
-    return `O funcionário possui estes benefícios: ${this.benefits}`;
-  },
-};
+    addBenefits: function addBenefits(benefit){
+        this.benefits.push(benefit);  
+        return benefit
+    },
 
-function Employee(firstName, lastName, salary) {
-  const employee = Object.create(employeeMethods);
-  employee.id = Math.floor(Math.random() * 100);
-  employee.firstName = firstName;
-  employee.lastName = lastName;
-  employee.salary = salary;
-  employee.benefits = [];
-
-  return employee;
+    listBenefits: function listBenefits(){
+        return this.benefits;
+    }
 }
 
-const employee1 = Employee("Luara", "Kerlen", 10000);
-employee1.addBenefits("VR");
+function Employee(firstName, lastName, salary, benefits){
+    const employee = {};
+    
+    employee.id = "id" + new Date().getTime();
+    employee.firstName = firstName;
+    employee.lastName = lastName;
+    employee.salary = salary;
+    employee.benefits = benefits;
 
-console.log(employee1.listBenefits());
-console.log(employee1.removeBenefits("VR"));
-console.log(employee1.listBenefits());
-console.log(employee1.salary);
-employee1.raiseSalary(15);
-console.log(employee1.salary);
+    return employee;
+}
+
+  let barbara = Object.create(employeeMethods);
+  console.log(barbara);
+  console.log("list" + barbara.benefits);
+  console.log("Add: " + barbara.addBenefits(["gympass","VR", "PLR"]));
+  console.log("remove: " + barbara.removeBenefits());
+  console.log("list" + barbara.benefits);
+  
